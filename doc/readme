@@ -1,0 +1,15 @@
+eclipse.manifest is used to register annotation processor with eclipse
+
+on project properties / java compiler / annotation processing:
+- enable project specific settings
+- enable annotation processing
+- enable processing in editor
+- generated source directory: context/src
+- ensure context/src is declared as source in java build path / source tab
+
+on project properties / java compiler / annotation processing / factory path:
+- enable project specific settings
+- add js-apt-x.y.z.jar
+
+be aware that context/src should not contains user defined classes
+it is maintained by annotation processor
