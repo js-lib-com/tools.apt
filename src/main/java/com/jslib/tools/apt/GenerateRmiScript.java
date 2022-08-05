@@ -1,4 +1,4 @@
-package js.tools.apt;
+package com.jslib.tools.apt;
 
 import java.io.Closeable;
 import java.io.IOException;
@@ -20,13 +20,13 @@ import javax.lang.model.type.TypeMirror;
 import javax.tools.FileObject;
 import javax.tools.StandardLocation;
 
-import js.tools.script.gen.Builder;
-import js.tools.script.gen.JsClass;
-import js.tools.script.gen.JsMethod;
+import com.jslib.maven.script.gen.Builder;
+import com.jslib.maven.script.gen.JsClass;
+import com.jslib.maven.script.gen.JsMethod;
 
 /**
  * Annotation processor for HTTP-RMI stub script generation. Process all remote methods from classes annotated with
- * "jakarta.ejb.Remote" - deprecated "javax.ejb.Remote" is also supported, and generate script classes for HTTP-RMI stub.
+ * "jakarta.ejb.Remote" and generate script classes for HTTP-RMI stub.
  * 
  * <pre>
  * In order to use this annotation processor from Eclipse IDE one may need to:
@@ -44,7 +44,7 @@ import js.tools.script.gen.JsMethod;
  * @author Iulian Rotaru
  * @since 1.0
  */
-@SupportedAnnotationTypes({ "jakarta.ejb.Remote", "javax.ejb.Remote" })
+@SupportedAnnotationTypes("jakarta.ejb.Remote")
 public class GenerateRmiScript extends AbstractProcessor {
 	/**
 	 * Annotation processor files factory.
